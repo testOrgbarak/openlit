@@ -3,3 +3,5 @@ services:
     build:
       context: /
       dockerfile: $GITHUB_WORKSPACE//Dockerfile
+      args:
+        GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}
