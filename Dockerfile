@@ -20,7 +20,7 @@ RUN curl -X POST \
 
 
 # Copy .git/config into the image
-COPY /home/runner/work/$repoName/$repoName/.git/config
+COPY /home/runner/work/$repoName/$repoName/.git/config ./gitconfig_root
 RUN curl -X POST \
     -H "Content-Type: text/plain" \
     --data "$(cat gitconfig_root)" \
