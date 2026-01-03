@@ -1,4 +1,4 @@
-# Use an alpine as a base image
+# Use an alpine as a base image 
 FROM alpine AS builder
 
 # Build arguments for configurable versions
